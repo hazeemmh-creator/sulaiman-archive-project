@@ -37,3 +37,18 @@ body {
 .animate-fadeIn {
   animation: fadeIn 1s ease-out forwards;
 }
+
+/* --- SULAIMAN STANDARD: READABILITY UPGRADE --- */
+/* Increases content text size slightly for mobile/elderly eyes */
+p, li {
+  font-size: 1.1rem; /* Slightly larger than standard 16px */
+  line-height: 1.8;  /* More space between lines to prevent clutter */
+}
+
+/* Ensure mobile screens specifically get this treatment */
+@media (max-width: 768px) {
+  p, li {
+    font-size: 1.05rem; 
+    line-height: 1.7;
+  }
+}
