@@ -171,7 +171,7 @@ export default function LegislativeConferencePage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <Image
-          src="/library-conference.jpg"
+          src="/library-conference3.jpg"
           alt="Legislative Conference Photo"
           width={600}
           height={400}
