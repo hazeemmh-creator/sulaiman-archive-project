@@ -108,67 +108,75 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. RECENT ENGAGEMENTS (NEW ADDITION - Placed at Bottom) */}
-      {/* Designed to complement, not compete with, the Legacy section */}
-      <section className="py-24 px-6 max-w-7xl mx-auto border-t border-slate-900">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="h-1 w-10 bg-blue-600"></div>
-            <h2 className="text-sm font-bold tracking-widest text-slate-500 uppercase">
-              Current Intelligence & Global Engagements (Q1 2026)
+      {/* 4. EXECUTIVE DOSSIER: CURRENT INTELLIGENCE (NEW "INSTRUCTION MANUAL" UI) */}
+      <section className="py-24 px-6 max-w-7xl mx-auto font-mono">
+          <div className="flex flex-col mb-12 border-b-2 border-dashed border-slate-800 pb-6">
+            <div className="text-blue-500 text-[10px] tracking-[0.3em] uppercase mb-2">
+              [// SYSTEM_LOG: 2026_Q1_BRIEFINGS]
+            </div>
+            <h2 className="text-3xl font-black tracking-widest text-white uppercase font-sans">
+              Executive Briefings
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-slate-800 bg-slate-950">
             
-            {/* Oxford */}
-            <Link href="/news/oxford-2026" className="group block">
-              <div className="relative h-64 overflow-hidden rounded-2xl mb-6 border border-slate-800 group-hover:border-blue-500/50 transition-colors">
-                <Image 
-                  src="/news/oxford-group.jpg" 
-                  alt="Oxford University" 
-                  fill 
-                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
-                />
+            {/* Oxford Dossier Card */}
+            <Link href="/news/oxford-2026" className="group block border border-slate-800 p-8 hover:bg-black transition-colors relative">
+              {/* Technical Corners */}
+              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+              <div className="text-[10px] text-slate-500 tracking-[0.2em] mb-4 flex justify-between border-b border-slate-800 pb-2">
+                 <span>LOC: UK</span>
+                 <span className="text-blue-500">CLASS: GLOBAL</span>
               </div>
-              <div className="flex items-center gap-2 text-blue-500 text-xs font-bold tracking-widest mb-3">
-                 <FaGlobe /> GLOBAL • UK
+              <div className="relative h-40 w-full mb-6 border border-slate-800 overflow-hidden">
+                <Image src="/news/oxford-group.jpg" alt="Oxford University" fill className="object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Oxford Strategy Session</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">Integrating world-class governance at Saïd Business School.</p>
+              <h3 className="text-xl font-bold text-white mb-2 font-sans group-hover:text-blue-400">Oxford Strategy Session</h3>
+              <p className="text-slate-500 text-xs leading-relaxed font-sans">Integrating world-class governance at Saïd Business School.</p>
+              <div className="mt-6 text-slate-600 text-[10px] uppercase tracking-widest group-hover:text-blue-500 transition-colors">
+                 [ DECRYPT FILE ] <span className="ml-2">→</span>
+              </div>
             </Link>
 
-            {/* Federalism */}
-            <Link href="/news/federalism-lecture" className="group block">
-              <div className="relative h-64 overflow-hidden rounded-2xl mb-6 border border-slate-800 group-hover:border-blue-500/50 transition-colors">
-                <Image 
-                  src="/news/federalism-lecture.jpg" 
-                  alt="Federalism Lecture" 
-                  fill 
-                  className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
-                />
+            {/* Federalism Dossier Card */}
+            <Link href="/news/federalism-lecture" className="group block border border-slate-800 p-8 hover:bg-black transition-colors relative">
+              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+              <div className="text-[10px] text-slate-500 tracking-[0.2em] mb-4 flex justify-between border-b border-slate-800 pb-2">
+                 <span>LOC: ABUJA</span>
+                 <span className="text-slate-300">CLASS: NATIONAL</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-400 text-xs font-bold tracking-widest mb-3">
-                 <FaBookOpen /> NATIONAL • ABUJA
+              <div className="relative h-40 w-full mb-6 border border-slate-800 overflow-hidden">
+                <Image src="/news/federalism-lecture.jpg" alt="Federalism Lecture" fill className="object-cover object-top grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">70 Years of Federalism</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">Interrogating Nigeria's structural integrity with Prof. Rotimi Suberu.</p>
+              <h3 className="text-xl font-bold text-white mb-2 font-sans group-hover:text-blue-400">70 Years of Federalism</h3>
+              <p className="text-slate-500 text-xs leading-relaxed font-sans">Interrogating Nigeria's structural integrity with Prof. Suberu.</p>
+              <div className="mt-6 text-slate-600 text-[10px] uppercase tracking-widest group-hover:text-blue-500 transition-colors">
+                 [ DECRYPT FILE ] <span className="ml-2">→</span>
+              </div>
             </Link>
 
-            {/* CAEEP */}
-            <Link href="/news/caeep-2026" className="group block">
-              <div className="relative h-64 overflow-hidden rounded-2xl mb-6 border border-slate-800 group-hover:border-blue-500/50 transition-colors">
-                <Image 
-                  src="/news/caeep-2026.jpg" 
-                  alt="CAEEP 2026" 
-                  fill 
-                  className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
-                />
+            {/* CAEEP Dossier Card */}
+            <Link href="/news/caeep-2026" className="group block border border-slate-800 p-8 hover:bg-black transition-colors relative">
+              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+              <div className="text-[10px] text-slate-500 tracking-[0.2em] mb-4 flex justify-between border-b border-slate-800 pb-2">
+                 <span>LOC: NILDS</span>
+                 <span className="text-blue-400">CLASS: TRAINING</span>
               </div>
-              <div className="flex items-center gap-2 text-blue-400 text-xs font-bold tracking-widest mb-3">
-                 <FaAward /> INSTITUTIONAL • TRAINING
+              <div className="relative h-40 w-full mb-6 border border-slate-800 overflow-hidden">
+                <Image src="/news/caeep-2026.jpg" alt="CAEEP 2026" fill className="object-cover object-top grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Executive Education 2026</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">Applications open for the 2026 Legislative Certification.</p>
+              <h3 className="text-xl font-bold text-white mb-2 font-sans group-hover:text-blue-400">Executive Education</h3>
+              <p className="text-slate-500 text-xs leading-relaxed font-sans">Applications open for the 2026 Legislative Certification.</p>
+              <div className="mt-6 text-slate-600 text-[10px] uppercase tracking-widest group-hover:text-blue-500 transition-colors">
+                 [ DECRYPT FILE ] <span className="ml-2">→</span>
+              </div>
             </Link>
 
           </div>
