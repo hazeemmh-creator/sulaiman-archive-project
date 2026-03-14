@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { FaArrowRight, FaUniversity, FaGavel, FaUsers, FaMicrophone, FaGlobe, FaBookOpen, FaAward } from "react-icons/fa"
+import { FaArrowRight, FaUniversity, FaGavel, FaUsers, FaMicrophone } from "react-icons/fa"
 
 export default function HomePage() {
   return (
@@ -53,7 +53,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. THE THREE PILLARS (NARRATIVE PATHS) (UNCHANGED) */}
+      {/* 2. THE THREE PILLARS (UNCHANGED) */}
       <section className="py-24 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <PillarCard 
@@ -77,7 +77,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. FEATURED LEGACY (Radio & LeCeSA) (UNCHANGED) */}
+      {/* 3. FEATURED LEGACY (UNCHANGED) */}
       <section className="bg-slate-900/30 py-24 border-y border-slate-900">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -108,7 +108,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. EXECUTIVE DOSSIER: CURRENT INTELLIGENCE (NEW "INSTRUCTION MANUAL" UI) */}
+      {/* 4. EXECUTIVE DOSSIER: CURRENT INTELLIGENCE */}
       <section className="py-24 px-6 max-w-7xl mx-auto font-mono">
           <div className="flex flex-col mb-12 border-b-2 border-dashed border-slate-800 pb-6">
             <div className="text-blue-500 text-[10px] tracking-[0.3em] uppercase mb-2">
@@ -119,11 +119,30 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-slate-800 bg-slate-950">
+          {/* CHANGED TO A 4-COLUMN GRID TO FIT AFCFTA */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-slate-800 bg-slate-950">
             
+            {/* NEW: AfCFTA Dossier Card */}
+            <Link href="/news/afcfta-2026" className="group block border border-slate-800 p-8 hover:bg-black transition-colors relative">
+              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+              <div className="text-[10px] text-slate-500 tracking-[0.2em] mb-4 flex justify-between border-b border-slate-800 pb-2">
+                 <span>LOC: ABUJA</span>
+                 <span className="text-blue-500">CLASS: GLOBAL</span>
+              </div>
+              <div className="relative h-40 w-full mb-6 border border-slate-800 overflow-hidden">
+                <Image src="/news/afcfta-2026.jpg" alt="AfCFTA Programme" fill className="object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2 font-sans group-hover:text-blue-400">AfCFTA Capacity Building</h3>
+              <p className="text-slate-500 text-xs leading-relaxed font-sans">Translating Africa's economic integration into national law.</p>
+              <div className="mt-6 text-slate-600 text-[10px] uppercase tracking-widest group-hover:text-blue-500 transition-colors">
+                 [ DECRYPT FILE ] <span className="ml-2">→</span>
+              </div>
+            </Link>
+
             {/* Oxford Dossier Card */}
             <Link href="/news/oxford-2026" className="group block border border-slate-800 p-8 hover:bg-black transition-colors relative">
-              {/* Technical Corners */}
               <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
