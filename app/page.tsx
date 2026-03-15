@@ -1,11 +1,15 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { FaArrowRight, FaUniversity, FaGavel, FaUsers, FaMicrophone } from "react-icons/fa"
 
 export default function HomePage() {
+  // This is the "Brain" that remembers what filter is clicked!
+  const [activeFilter, setActiveFilter] = useState("ALL");
+
   return (
     <div className="bg-black text-white min-h-screen">
       
@@ -108,9 +112,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. EXECUTIVE DOSSIER: CURRENT INTELLIGENCE */}
+      {/* 4. EXECUTIVE DOSSIER: CURRENT INTELLIGENCE WITH FILTERS */}
       <section className="py-24 px-6 max-w-7xl mx-auto font-mono">
-          <div className="flex flex-col mb-12 border-b-2 border-dashed border-slate-800 pb-6">
+          <div className="flex flex-col mb-8 border-b-2 border-dashed border-slate-800 pb-6">
             <div className="text-blue-500 text-[10px] tracking-[0.3em] uppercase mb-2">
               [// SYSTEM_LOG: 2026_Q1_BRIEFINGS]
             </div>
@@ -119,84 +123,108 @@ export default function HomePage() {
             </h2>
           </div>
 
-          {/* CHANGED TO A 4-COLUMN GRID TO FIT AFCFTA */}
+          {/* THE NEW DEEP FILTER BUTTONS */}
+          <div className="flex flex-wrap gap-4 mb-12">
+            {["ALL", "GLOBAL", "NATIONAL", "TRAINING"].map((filterOption) => (
+              <button
+                key={filterOption}
+                onClick={() => setActiveFilter(filterOption)}
+                className={`px-6 py-2 text-xs font-bold tracking-widest uppercase transition-all border ${
+                  activeFilter === filterOption
+                    ? "bg-blue-600/20 border-blue-500 text-blue-400"
+                    : "bg-slate-950 border-slate-800 text-slate-500 hover:border-slate-600 hover:text-slate-300"
+                }`}
+              >
+                [ {filterOption} ]
+              </button>
+            ))}
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-slate-800 bg-slate-950">
             
-            {/* NEW: AfCFTA Dossier Card */}
-            <Link href="/news/afcfta-2026" className="group block border border-slate-800 p-8 hover:bg-black transition-colors relative">
-              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            {/* AfCFTA Dossier Card - Shows on ALL or GLOBAL */}
+            {(activeFilter === "ALL" || activeFilter === "GLOBAL") && (
+              <Link href="/news/afcfta-2026" className="group block border border-slate-800 p-8 hover:bg-black transition-colors relative">
+                <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-              <div className="text-[10px] text-slate-500 tracking-[0.2em] mb-4 flex justify-between border-b border-slate-800 pb-2">
-                 <span>LOC: ABUJA</span>
-                 <span className="text-blue-500">CLASS: GLOBAL</span>
-              </div>
-              <div className="relative h-40 w-full mb-6 border border-slate-800 overflow-hidden">
-                <Image src="/news/afcfta-2026.jpg" alt="AfCFTA Programme" fill className="object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2 font-sans group-hover:text-blue-400">AfCFTA Capacity Building</h3>
-              <p className="text-slate-500 text-xs leading-relaxed font-sans">Translating Africa's economic integration into national law.</p>
-              <div className="mt-6 text-slate-600 text-[10px] uppercase tracking-widest group-hover:text-blue-500 transition-colors">
-                 [ DECRYPT FILE ] <span className="ml-2">→</span>
-              </div>
-            </Link>
+                <div className="text-[10px] text-slate-500 tracking-[0.2em] mb-4 flex justify-between border-b border-slate-800 pb-2">
+                   <span>LOC: ABUJA</span>
+                   <span className="text-blue-500">CLASS: GLOBAL</span>
+                </div>
+                <div className="relative h-40 w-full mb-6 border border-slate-800 overflow-hidden">
+                  <Image src="/news/afcfta-2026.jpg" alt="AfCFTA Programme" fill className="object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 font-sans group-hover:text-blue-400">AfCFTA Capacity Building</h3>
+                <p className="text-slate-500 text-xs leading-relaxed font-sans">Translating Africa's economic integration into national law.</p>
+                <div className="mt-6 text-slate-600 text-[10px] uppercase tracking-widest group-hover:text-blue-500 transition-colors">
+                   [ DECRYPT FILE ] <span className="ml-2">→</span>
+                </div>
+              </Link>
+            )}
 
-            {/* Oxford Dossier Card */}
-            <Link href="/news/oxford-2026" className="group block border border-slate-800 p-8 hover:bg-black transition-colors relative">
-              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            {/* Oxford Dossier Card - Shows on ALL or GLOBAL */}
+            {(activeFilter === "ALL" || activeFilter === "GLOBAL") && (
+              <Link href="/news/oxford-2026" className="group block border border-slate-800 p-8 hover:bg-black transition-colors relative">
+                <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-              <div className="text-[10px] text-slate-500 tracking-[0.2em] mb-4 flex justify-between border-b border-slate-800 pb-2">
-                 <span>LOC: UK</span>
-                 <span className="text-blue-500">CLASS: GLOBAL</span>
-              </div>
-              <div className="relative h-40 w-full mb-6 border border-slate-800 overflow-hidden">
-                <Image src="/news/oxford-group.jpg" alt="Oxford University" fill className="object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2 font-sans group-hover:text-blue-400">Oxford Strategy Session</h3>
-              <p className="text-slate-500 text-xs leading-relaxed font-sans">Integrating world-class governance at Saïd Business School.</p>
-              <div className="mt-6 text-slate-600 text-[10px] uppercase tracking-widest group-hover:text-blue-500 transition-colors">
-                 [ DECRYPT FILE ] <span className="ml-2">→</span>
-              </div>
-            </Link>
+                <div className="text-[10px] text-slate-500 tracking-[0.2em] mb-4 flex justify-between border-b border-slate-800 pb-2">
+                   <span>LOC: UK</span>
+                   <span className="text-blue-500">CLASS: GLOBAL</span>
+                </div>
+                <div className="relative h-40 w-full mb-6 border border-slate-800 overflow-hidden">
+                  <Image src="/news/oxford-group.jpg" alt="Oxford University" fill className="object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 font-sans group-hover:text-blue-400">Oxford Strategy Session</h3>
+                <p className="text-slate-500 text-xs leading-relaxed font-sans">Integrating world-class governance at Saïd Business School.</p>
+                <div className="mt-6 text-slate-600 text-[10px] uppercase tracking-widest group-hover:text-blue-500 transition-colors">
+                   [ DECRYPT FILE ] <span className="ml-2">→</span>
+                </div>
+              </Link>
+            )}
 
-            {/* Federalism Dossier Card */}
-            <Link href="/news/federalism-lecture" className="group block border border-slate-800 p-8 hover:bg-black transition-colors relative">
-              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            {/* Federalism Dossier Card - Shows on ALL or NATIONAL */}
+            {(activeFilter === "ALL" || activeFilter === "NATIONAL") && (
+              <Link href="/news/federalism-lecture" className="group block border border-slate-800 p-8 hover:bg-black transition-colors relative">
+                <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-              <div className="text-[10px] text-slate-500 tracking-[0.2em] mb-4 flex justify-between border-b border-slate-800 pb-2">
-                 <span>LOC: ABUJA</span>
-                 <span className="text-slate-300">CLASS: NATIONAL</span>
-              </div>
-              <div className="relative h-40 w-full mb-6 border border-slate-800 overflow-hidden">
-                <Image src="/news/federalism-lecture.jpg" alt="Federalism Lecture" fill className="object-cover object-top grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2 font-sans group-hover:text-blue-400">70 Years of Federalism</h3>
-              <p className="text-slate-500 text-xs leading-relaxed font-sans">Interrogating Nigeria's structural integrity with Prof. Suberu.</p>
-              <div className="mt-6 text-slate-600 text-[10px] uppercase tracking-widest group-hover:text-blue-500 transition-colors">
-                 [ DECRYPT FILE ] <span className="ml-2">→</span>
-              </div>
-            </Link>
+                <div className="text-[10px] text-slate-500 tracking-[0.2em] mb-4 flex justify-between border-b border-slate-800 pb-2">
+                   <span>LOC: ABUJA</span>
+                   <span className="text-slate-300">CLASS: NATIONAL</span>
+                </div>
+                <div className="relative h-40 w-full mb-6 border border-slate-800 overflow-hidden">
+                  <Image src="/news/federalism-lecture.jpg" alt="Federalism Lecture" fill className="object-cover object-top grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 font-sans group-hover:text-blue-400">70 Years of Federalism</h3>
+                <p className="text-slate-500 text-xs leading-relaxed font-sans">Interrogating Nigeria's structural integrity with Prof. Suberu.</p>
+                <div className="mt-6 text-slate-600 text-[10px] uppercase tracking-widest group-hover:text-blue-500 transition-colors">
+                   [ DECRYPT FILE ] <span className="ml-2">→</span>
+                </div>
+              </Link>
+            )}
 
-            {/* CAEEP Dossier Card */}
-            <Link href="/news/caeep-2026" className="group block border border-slate-800 p-8 hover:bg-black transition-colors relative">
-              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            {/* CAEEP Dossier Card - Shows on ALL or TRAINING */}
+            {(activeFilter === "ALL" || activeFilter === "TRAINING") && (
+              <Link href="/news/caeep-2026" className="group block border border-slate-800 p-8 hover:bg-black transition-colors relative">
+                <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-              <div className="text-[10px] text-slate-500 tracking-[0.2em] mb-4 flex justify-between border-b border-slate-800 pb-2">
-                 <span>LOC: NILDS</span>
-                 <span className="text-blue-400">CLASS: TRAINING</span>
-              </div>
-              <div className="relative h-40 w-full mb-6 border border-slate-800 overflow-hidden">
-                <Image src="/news/caeep-2026.jpg" alt="CAEEP 2026" fill className="object-cover object-top grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2 font-sans group-hover:text-blue-400">Executive Education</h3>
-              <p className="text-slate-500 text-xs leading-relaxed font-sans">Applications open for the 2026 Legislative Certification.</p>
-              <div className="mt-6 text-slate-600 text-[10px] uppercase tracking-widest group-hover:text-blue-500 transition-colors">
-                 [ DECRYPT FILE ] <span className="ml-2">→</span>
-              </div>
-            </Link>
+                <div className="text-[10px] text-slate-500 tracking-[0.2em] mb-4 flex justify-between border-b border-slate-800 pb-2">
+                   <span>LOC: NILDS</span>
+                   <span className="text-blue-400">CLASS: TRAINING</span>
+                </div>
+                <div className="relative h-40 w-full mb-6 border border-slate-800 overflow-hidden">
+                  <Image src="/news/caeep-2026.jpg" alt="CAEEP 2026" fill className="object-cover object-top grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2 font-sans group-hover:text-blue-400">Executive Education</h3>
+                <p className="text-slate-500 text-xs leading-relaxed font-sans">Applications open for the 2026 Legislative Certification.</p>
+                <div className="mt-6 text-slate-600 text-[10px] uppercase tracking-widest group-hover:text-blue-500 transition-colors">
+                   [ DECRYPT FILE ] <span className="ml-2">→</span>
+                </div>
+              </Link>
+            )}
 
           </div>
       </section>
