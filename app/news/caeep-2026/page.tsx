@@ -2,103 +2,99 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { FaArrowLeft } from "react-icons/fa"
+import { FaArrowLeft, FaArrowRight, FaCalendarAlt, FaEnvelope, FaMapMarkerAlt, FaUsers } from "react-icons/fa"
+
+const speakers = [
+  "Prof. Abubakar O. Sulaiman, DG NILDS",
+  "Prof. Attahiru M. Jega, Consultant, CAEEP",
+  "Prof. Tijjani Mohammed Bande",
+  "Prof. Adele Jinadu",
+]
 
 export default function CAEEPNewsPage() {
   return (
-    <div className="bg-black min-h-screen text-slate-200 font-mono selection:bg-blue-500 selection:text-white pb-24">
-      
-      {/* 1. DOSSIER NAVIGATION */}
-      <nav className="border-b border-slate-800 bg-black/90 backdrop-blur-md sticky top-0 z-50">
-        <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 text-xs font-bold text-slate-300 hover:text-blue-400 transition-colors uppercase tracking-[0.2em]">
-            <FaArrowLeft /> [ RETURN TO MAIN TERMINAL ]
+    <div className="bg-black min-h-screen text-slate-200 selection:bg-blue-500 selection:text-white pb-24">
+      <section className="px-6 pt-28 pb-16 border-b border-slate-900">
+        <div className="max-w-6xl mx-auto">
+          <Link href="/initiatives/caeep" className="inline-flex items-center gap-2 text-xs font-black text-slate-500 hover:text-blue-400 transition-colors uppercase tracking-[0.2em] mb-10">
+            <FaArrowLeft /> Back to CAEEP
           </Link>
-          <div className="text-xs font-bold text-blue-400 uppercase tracking-[0.2em]">
-            FILE_REF: CAEEP-2026-04
-          </div>
-        </div>
-      </nav>
 
-      {/* 2. DOSSIER METADATA HEADER */}
-      <header className="max-w-4xl mx-auto px-6 pt-16 pb-8 border-b border-dashed border-slate-800">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-xs tracking-[0.2em] text-slate-300 uppercase mb-8">
-          <div>
-            <span className="block text-slate-400 font-semibold mb-1">CLASSIFICATION</span>
-            <span className="text-blue-400 font-bold">INSTITUTIONAL</span>
-          </div>
-          <div>
-            <span className="block text-slate-400 font-semibold mb-1">LOCATION</span>
-            <span className="text-white font-bold">NILDS ACADEMY</span>
-          </div>
-          <div>
-            <span className="block text-slate-400 font-semibold mb-1">TARGET</span>
-            <span className="text-emerald-400 font-bold">EXECUTIVES</span>
-          </div>
-          <div>
-            <span className="block text-slate-400 font-semibold mb-1">STATUS</span>
-            <span className="text-white font-bold">ADMISSIONS OPEN</span>
-          </div>
-        </div>
-        <h1 className="text-3xl md:text-5xl font-black text-white uppercase font-sans tracking-tight mb-4">
-          2026 Executive Education
-        </h1>
-        <div className="text-sm text-slate-300 uppercase tracking-widest border-l-2 border-blue-500 pl-4 font-semibold">
-          Bespoke certification programmes for Nigeria's top-tier leadership.
-        </div>
-      </header>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-6">
+              <p className="text-blue-500 font-black uppercase text-[10px] tracking-[0.3em] mb-4">2026 Programme Update</p>
+              <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight leading-[0.95] mb-8">
+                CAEEP Virtual Open Day
+              </h1>
+              <p className="text-xl text-slate-400 leading-relaxed">
+                Enhancing leadership capacity for sustainable development through executive education, policy competence, and professional certification.
+              </p>
+            </div>
 
-      {/* 3. HERO EVIDENCE (IMAGE) */}
-      <div className="max-w-4xl mx-auto px-6 py-8">
-        <div className="relative h-[40vh] md:h-[60vh] w-full border border-slate-800 p-2 bg-slate-900/50">
-          <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-blue-500 z-10"></div>
-          <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-blue-500 z-10"></div>
-          <div className="relative h-full w-full overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-            <Image 
-              src="/news/caeep-2026.jpg" 
-              alt="CAEEP 2026" 
-              fill 
-              className="object-cover object-top"
-              priority
-            />
+            <div className="lg:col-span-6">
+              <div className="relative h-[620px] max-h-[78vh] border border-slate-800 bg-slate-950 overflow-hidden">
+                <Image src="/spotlight/caeep-virtual-open-day-retouched.png" alt="CAEEP virtual open day flyer" fill priority className="object-contain p-3" />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="text-xs text-right text-slate-500 mt-2 tracking-widest uppercase font-semibold">
-          [ EVIDENCE REF: VISUAL_DATA_04 ]
-        </div>
-      </div>
+      </section>
 
-      {/* 4. THE 3-BULLET EXECUTIVE BRIEFING */}
-      <article className="max-w-4xl mx-auto px-6 py-8">
-        <div className="bg-slate-900 border border-slate-800 p-8 md:p-12 relative mb-8">
-          <h3 className="text-blue-400 text-sm font-bold tracking-[0.3em] uppercase mb-8 border-b border-slate-800 pb-4">
-            [// DECRYPTED BRIEFING ]
-          </h3>
+      <article className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="lg:col-span-7 space-y-8">
+          <div className="border border-slate-800 bg-slate-950 p-8">
+            <h2 className="text-3xl font-black text-white mb-5">Open day brief</h2>
+            <p className="text-slate-400 leading-relaxed">
+              The Centre for Advanced Executive Education Programme convened a virtual open day to introduce leaders, public officials, and professionals to CAEEP's leadership education model. The session positioned executive learning as a practical route to stronger policy judgement, institutional performance, and sustainable development.
+            </p>
+          </div>
 
-          <ul className="space-y-10 text-base font-sans leading-relaxed text-slate-200">
-            <li className="flex flex-col md:flex-row gap-4">
-              <span className="text-slate-400 font-mono text-sm tracking-widest w-32 shrink-0 pt-1 font-bold">CONTEXT:</span>
-              <p>Modern governance in Nigeria requires specialized capacity. Legislators, Heads of Ministries, and Political Party Executives need advanced, tailored education to address unique national challenges.</p>
-            </li>
-            <li className="flex flex-col md:flex-row gap-4">
-              <span className="text-blue-400 font-mono text-sm tracking-widest w-32 shrink-0 pt-1 font-bold">ACTION:</span>
-              <p>The Centre for Advanced Executive Education Programme (CAEEP) at NILDS officially opened applications for its 2026 Academic Session, offering specialized tracks like Legislative Governance and Public Policy Development.</p>
-            </li>
-            <li className="flex flex-col md:flex-row gap-4">
-              <span className="text-emerald-400 font-mono text-sm tracking-widest w-32 shrink-0 pt-1 font-bold">OUTCOME:</span>
-              <p>Equipping Nigeria's political class with flexible (On-Site/Hybrid) professional certifications to drive institutional transformation and effective policy implementation.</p>
-            </li>
-          </ul>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <InfoCard icon={<FaCalendarAlt />} label="Date" value="13 May 2026" />
+            <InfoCard icon={<FaUsers />} label="Format" value="Virtual Open Day" />
+            <InfoCard icon={<FaMapMarkerAlt />} label="Venue" value="Zoom" />
+          </div>
+
+          <div className="border border-slate-800 bg-black p-8">
+            <h2 className="text-2xl font-black text-white mb-6">Featured speakers</h2>
+            <div className="grid gap-3">
+              {speakers.map((speaker) => (
+                <div key={speaker} className="border border-slate-800 bg-slate-950 px-5 py-4 text-slate-300 font-semibold">
+                  {speaker}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        
-        {/* CALL TO ACTION DOSSIER STYLE */}
-        <div className="flex justify-center mt-12">
-            <a href="mailto:caeep@nilds.gov.ng" className="px-8 py-4 bg-blue-600/20 border border-blue-500 text-blue-400 font-bold uppercase tracking-widest text-xs hover:bg-blue-600 hover:text-white transition-all flex items-center gap-3">
-                [ INITIATE COMMUNICATION: ADMISSIONS ]
-            </a>
-        </div>
+
+        <aside className="lg:col-span-5 space-y-5">
+          <Link href="/initiatives/caeep" className="group block border border-blue-500/30 bg-blue-600/10 p-8 hover:bg-blue-600 hover:border-blue-500 transition-all">
+            <h3 className="text-2xl font-black text-white mb-3">Explore full CAEEP programme</h3>
+            <p className="text-slate-400 group-hover:text-blue-50 leading-relaxed mb-6">
+              View the complete executive education pathway, course structure, certifications, and linked visual materials.
+            </p>
+            <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-blue-300 group-hover:text-white">
+              Open programme page <FaArrowRight />
+            </span>
+          </Link>
+
+          <a href="mailto:caeep@nils.gov.ng" className="group block border border-slate-800 bg-slate-950 p-8 hover:border-blue-500/40 transition-all">
+            <FaEnvelope className="text-blue-400 text-2xl mb-5" />
+            <h3 className="text-xl font-black text-white mb-2">Admissions contact</h3>
+            <p className="text-slate-500">caeep@nils.gov.ng</p>
+          </a>
+        </aside>
       </article>
+    </div>
+  )
+}
 
+function InfoCard({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
+  return (
+    <div className="border border-slate-800 bg-slate-950 p-5">
+      <div className="text-blue-400 mb-4">{icon}</div>
+      <p className="text-[10px] uppercase tracking-[0.24em] text-slate-500 font-black mb-2">{label}</p>
+      <p className="text-white font-bold">{value}</p>
     </div>
   )
 }

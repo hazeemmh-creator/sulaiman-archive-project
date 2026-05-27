@@ -103,13 +103,23 @@ const spotlights = [
     date: "25 May 2026",
     image: "/spotlight/children-day-bsft.jpeg",
     href: "/themes/inclusive-leader",
+    fit: "contain",
   },
   {
     title: "CAEEP Virtual Open Day",
     tag: "Executive Education",
     date: "13 May 2026",
-    image: "/spotlight/caeep-open-day.jpeg",
+    image: "/spotlight/caeep-virtual-open-day-retouched.png",
     href: "/news/caeep-2026",
+    fit: "contain",
+  },
+  {
+    title: "Menstrual Hygiene Day Outreach",
+    tag: "Community Development",
+    date: "21 May 2026",
+    image: "/spotlight/menstrual-hygiene-retouched.png",
+    href: "/themes/inclusive-leader",
+    fit: "contain",
   },
   {
     title: "Security Sector Financing Lecture",
@@ -117,6 +127,7 @@ const spotlights = [
     date: "14 May 2026",
     image: "/spotlight/security-financing-lecture.jpeg",
     href: "/news/federalism-lecture",
+    fit: "contain",
   },
 ]
 
@@ -293,7 +304,12 @@ export default function HomePage() {
           <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-5">
             {spotlights.map((item, index) => (
               <Link key={item.title} href={item.href} className={`group relative min-h-[310px] overflow-hidden border border-slate-800 bg-black ${index === 0 ? "md:row-span-2 md:min-h-[645px]" : ""}`}>
-                <Image src={item.image} alt={item.title} fill className="object-cover opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className={`${item.fit === "contain" ? "object-contain p-3" : "object-cover"} opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700`}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/10" />
                 <div className="absolute inset-x-0 bottom-0 p-6">
                   <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-black text-blue-300 mb-3">
@@ -336,14 +352,14 @@ export default function HomePage() {
 
           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="relative min-h-[520px] border border-slate-800 overflow-hidden bg-slate-950 md:row-span-2">
-              <Image src="/spotlight/caeep-courses-certifications.jpeg" alt="CAEEP courses and certifications" fill className="object-cover" />
+              <Image src="/spotlight/caeep-programme-retouched.png" alt="CAEEP courses and certifications" fill className="object-cover object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             </div>
             <div className="relative min-h-[250px] border border-slate-800 overflow-hidden bg-slate-950">
-              <Image src="/spotlight/caeep-africa-leadership.jpeg" alt="CAEEP Africa leadership registration" fill className="object-cover" />
+              <Image src="/spotlight/caeep-virtual-open-day-retouched.png" alt="CAEEP virtual open day" fill className="object-cover object-top" />
             </div>
             <div className="relative min-h-[250px] border border-slate-800 overflow-hidden bg-slate-950">
-              <Image src="/spotlight/caeep-fees-overview.jpeg" alt="CAEEP fees and registration overview" fill className="object-cover" />
+              <Image src="/spotlight/caeep-fees-overview.jpeg" alt="CAEEP fees and registration overview" fill className="object-cover object-top" />
             </div>
           </div>
         </div>

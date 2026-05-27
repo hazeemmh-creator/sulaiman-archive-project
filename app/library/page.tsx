@@ -10,19 +10,18 @@ import {
   FaBook, 
   FaGraduationCap, 
   FaBroadcastTower,
-  FaShieldAlt,
-  FaUsers 
+  FaShieldAlt
 } from "react-icons/fa"
 
 const modules = [
   // 🌟 NEW: CAEEP takes the top spot
   {
-    title: "CAEEP Initiative",
-    desc: "Community Action for Electoral Empowerment. Bridging the gap between legislative reform and grassroots reality.",
-    image: "/caeep-thumb.jpg", // Ensure this image is in your public folder
+    title: "CAEEP Executive Education",
+    desc: "Advanced executive courses and professional certifications for leaders who influence policy and institutions.",
+    image: "/spotlight/caeep-programme-retouched.png",
     link: "/initiatives/caeep",
-    icon: <FaUsers />,
-    tag: "Grassroots Democracy"
+    icon: <FaGraduationCap />,
+    tag: "Executive Education"
   },
   {
     title: "National Quiz Competition",

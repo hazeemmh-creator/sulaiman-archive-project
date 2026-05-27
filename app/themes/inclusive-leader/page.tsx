@@ -90,6 +90,25 @@ export default function InclusiveLeaderPage() {
           </div>
         </div>
 
+        {/* PILLAR 2B: COMMUNITY HEALTH OUTREACH */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="order-2 md:order-1">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="p-3 bg-emerald-500/10 rounded-xl text-emerald-500"><FaHandsHelping className="text-3xl" /></div>
+              <h2 className="text-3xl font-bold text-white">Community Health & Dignity</h2>
+            </div>
+            <p className="text-slate-400 text-lg leading-relaxed mb-6">
+              The Menstrual Hygiene Day outreach reflects the inclusive-leadership dimension of the archive: partnerships that bring civic institutions closer to young people, health education, and dignity-focused community support.
+            </p>
+            <Link href="/themes/inclusive-leader" className="inline-flex items-center gap-2 text-emerald-400 text-xs font-black uppercase tracking-widest hover:text-white transition-colors">
+              Inclusion archive record
+            </Link>
+          </div>
+          <div className="order-1 md:order-2 relative h-[520px] w-full rounded-[2rem] overflow-hidden border border-slate-800 bg-slate-950">
+             <Image src="/spotlight/menstrual-hygiene-retouched.png" alt="Menstrual Hygiene Day outreach flyer" fill className="object-contain p-3" />
+          </div>
+        </div>
+
         {/* PILLAR 3: COMMUNITY IMPACT */}
         <div className="bg-slate-900/30 border border-slate-800 rounded-[3rem] p-10 md:p-16 text-center">
           <FaSeedling className="text-6xl text-emerald-500 mx-auto mb-8" />
