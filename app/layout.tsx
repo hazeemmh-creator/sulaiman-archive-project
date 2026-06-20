@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Prof. A.O. Sulaiman | The Digital Legacy",
     description: "Explore the official digital archive documenting a legacy of legislative excellence.",
     url: "https://sulaiman-archive-project.vercel.app",
-    siteName: "The Sulaiman Standard",
+    siteName: "Global Institutional Archive",
     images: [
       {
         url: "https://sulaiman-archive-project.vercel.app/hero-background.jpg",
