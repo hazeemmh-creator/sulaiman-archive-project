@@ -56,7 +56,7 @@ const achievements = [
 
 const pathways = [
   {
-    title: "The Life of Amana",
+    title: "The Life of Stewardship Standard",
     eyebrow: "Biography",
     desc: "Trace the academic, public service, family, and philanthropic foundations behind the archive.",
     href: "/about/biography",
@@ -235,7 +235,7 @@ export default function HomePage() {
               </span>
             </h1>
             <p className="text-lg md:text-2xl text-slate-300 font-light max-w-3xl mx-auto leading-relaxed mb-10">
-              Academic architect. Legislative reformer. Institutional builder. A living record of the Amana standard in
+              Academic architect. Legislative reformer. Institutional builder. A living record of the Stewardship Standard in
               Nigerian governance.
             </p>
 
