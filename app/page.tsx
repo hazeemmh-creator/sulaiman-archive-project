@@ -207,7 +207,7 @@ export default function HomePage() {
     activeFilter === "All" ? briefings : briefings.filter((item) => item.category === activeFilter)
 
   return (
-    <div className="bg-black text-white min-h-screen overflow-hidden">
+    <div className="heritage-home bg-[#10243A] text-white min-h-screen overflow-hidden">
       
       {/* 1. HERO SECTION */}
       <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
@@ -225,16 +225,16 @@ export default function HomePage() {
 
         <div className="relative z-10 text-center px-6 max-w-6xl pt-10 pb-16">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <h2 className="text-blue-400 font-black tracking-[0.36em] uppercase text-xs mb-5">
+            <h2 className="text-[#C5A15A] font-black tracking-[0.36em] uppercase text-xs mb-5">
               The Digital Legacy Archive
             </h2>
             <h1 className="text-5xl md:text-7xl xl:text-8xl font-black mb-8 tracking-tighter uppercase leading-[0.92] max-w-5xl mx-auto">
               Prof. Abubakar <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-sky-200 to-white">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C5A15A] via-[#E0C58E] to-white">
                 O. Sulaiman
               </span>
             </h1>
-            <p className="text-lg md:text-2xl text-slate-300 font-light max-w-3xl mx-auto leading-relaxed mb-10">
+            <p className="text-lg md:text-2xl text-[#D9DFE5] font-light max-w-3xl mx-auto leading-relaxed mb-10">
               Academic architect. Legislative reformer. Institutional builder. A living record of the Stewardship Standard in
               Nigerian governance.
             </p>
@@ -253,8 +253,8 @@ export default function HomePage() {
 
       {/* 2. NEW: THE VIP 7-YEAR MILESTONE FEATURED BANNER */}
       <section className="relative z-20 px-6 -mt-32 mb-16 max-w-6xl mx-auto">
-        <Link href="/news/7-years-milestone" className="group flex flex-col md:flex-row bg-slate-950 border border-slate-800 hover:border-blue-500/50 transition-all duration-500 overflow-hidden shadow-2xl shadow-black">
-          <div className="md:w-2/5 relative h-64 md:h-auto border-b md:border-b-0 md:border-r border-slate-800 overflow-hidden bg-slate-900">
+        <Link href="/news/7-years-milestone" className="group flex flex-col md:flex-row bg-[#193653] border border-[#36536B] hover:border-[#C5A15A]/60 transition-all duration-500 overflow-hidden shadow-2xl shadow-black">
+          <div className="md:w-2/5 relative h-64 md:h-auto border-b md:border-b-0 md:border-r border-[#36536B] overflow-hidden bg-[#25445F]">
             <Image 
               src="/news/7-years-award.jpg" 
               alt="7 Years of Leadership" 
@@ -262,22 +262,22 @@ export default function HomePage() {
               className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
               priority
             />
-            <div className="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-black tracking-widest uppercase px-3 py-1">
+            <div className="absolute top-4 left-4 bg-[#C5A15A] text-white text-[10px] font-black tracking-widest uppercase px-3 py-1">
               [ LATEST MILESTONE ]
             </div>
           </div>
           <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
-            <div className="flex items-center gap-2 text-blue-400 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
+            <div className="flex items-center gap-2 text-[#C5A15A] text-[10px] font-black uppercase tracking-[0.2em] mb-4">
               <FaAward className="text-sm" /> Institutional Legacy
             </div>
-            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-4 group-hover:text-blue-400 transition-colors">
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-4 group-hover:text-[#C5A15A] transition-colors">
               7 Years of Transformative Leadership
             </h2>
-            <p className="text-sm md:text-base text-slate-400 mb-8 max-w-xl leading-relaxed">
+            <p className="text-sm md:text-base text-[#C7D0D8] mb-8 max-w-xl leading-relaxed">
               Celebrating Prof. Abubakar O. Sulaiman's legacy. A formal recognition of his visionary approach to governance, academic architecture, and legislative reform at NILDS.
             </p>
-            <div className="flex items-center gap-3 text-xs font-bold text-white uppercase tracking-widest group-hover:text-blue-400 transition-colors">
+            <div className="flex items-center gap-3 text-xs font-bold text-white uppercase tracking-widest group-hover:text-[#C5A15A] transition-colors">
               Access Executive Dossier <FaArrowRight className="group-hover:translate-x-2 transition-transform" />
             </div>
           </div>
@@ -288,14 +288,14 @@ export default function HomePage() {
       <section className="relative z-10 px-6 mb-24">
         <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {achievements.map((item) => (
-            <Link key={item.label} href={item.href} className="group bg-slate-950/90 border border-slate-800 p-5 md:p-6 hover:border-blue-500/50 hover:bg-slate-900 transition-all">
+            <Link key={item.label} href={item.href} className="group bg-[#193653] border border-[#36536B] p-5 md:p-6 hover:border-[#C5A15A]/60 hover:bg-[#25445F] transition-all">
               <div className="flex items-center justify-between mb-5">
-                <span className="text-blue-400 text-xl">{item.icon}</span>
-                <FaArrowRight className="text-slate-700 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+                <span className="text-[#C5A15A] text-xl">{item.icon}</span>
+                <FaArrowRight className="text-slate-700 group-hover:text-[#C5A15A] group-hover:translate-x-1 transition-all" />
               </div>
               <div className="text-2xl md:text-4xl font-black tracking-tighter text-white">{item.value}</div>
-              <div className="text-sm font-bold text-slate-200 mt-1">{item.label}</div>
-              <p className="hidden md:block text-xs text-slate-500 leading-relaxed mt-3">{item.detail}</p>
+              <div className="text-sm font-bold text-[#E7EBEF] mt-1">{item.label}</div>
+              <p className="hidden md:block text-xs text-[#B7C1CB] leading-relaxed mt-3">{item.detail}</p>
             </Link>
           ))}
         </div>
@@ -310,19 +310,19 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
           {pathways.map((path) => (
-            <Link key={path.title} href={path.href} className="group block bg-slate-950 border border-slate-900 hover:border-blue-500/50 transition-all">
+            <Link key={path.title} href={path.href} className="group block bg-[#193653] border border-[#25445F] hover:border-[#C5A15A]/60 transition-all">
               <div className="relative h-56 overflow-hidden">
                 <Image src={path.image} alt={path.title} fill className="object-cover opacity-70 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-black/20 to-transparent" />
-                <div className="absolute left-5 bottom-5 w-12 h-12 bg-blue-600 text-white flex items-center justify-center text-xl">
+                <div className="absolute left-5 bottom-5 w-12 h-12 bg-[#C5A15A] text-white flex items-center justify-center text-xl">
                   {path.icon}
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-[10px] text-blue-400 font-black uppercase tracking-[0.24em] mb-2">{path.eyebrow}</p>
-                <h3 className="text-2xl font-black text-white tracking-tight mb-3 group-hover:text-blue-300 transition-colors">{path.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed mb-6">{path.desc}</p>
-                <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-slate-400 group-hover:text-white">
+                <p className="text-[10px] text-[#C5A15A] font-black uppercase tracking-[0.24em] mb-2">{path.eyebrow}</p>
+                <h3 className="text-2xl font-black text-white tracking-tight mb-3 group-hover:text-[#E0C58E] transition-colors">{path.title}</h3>
+                <p className="text-sm text-[#B7C1CB] leading-relaxed mb-6">{path.desc}</p>
+                <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#C7D0D8] group-hover:text-white">
                   Open Section <FaArrowRight />
                 </span>
               </div>
@@ -331,7 +331,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-slate-950/70 border-y border-slate-900 py-24">
+      <section className="bg-[#193653] border-y border-[#25445F] py-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-4 lg:sticky lg:top-28">
             <SectionHeader
@@ -347,7 +347,7 @@ export default function HomePage() {
 
           <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-5">
             {spotlights.map((item, index) => (
-              <Link key={item.title} href={item.href} className={`group relative min-h-[310px] overflow-hidden border border-slate-800 bg-black ${index === 0 ? "md:row-span-2 md:min-h-[645px]" : ""}`}>
+              <Link key={item.title} href={item.href} className={`group relative min-h-[310px] overflow-hidden border border-[#36536B] bg-[#10243A] ${index === 0 ? "md:row-span-2 md:min-h-[645px]" : ""}`}>
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -356,11 +356,11 @@ export default function HomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/10" />
                 <div className="absolute inset-x-0 bottom-0 p-6">
-                  <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-black text-blue-300 mb-3">
+                  <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-black text-[#E0C58E] mb-3">
                     <FaNewspaper /> {item.tag}
                   </div>
                   <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight leading-tight">{item.title}</h3>
-                  <p className="text-sm text-slate-300 mt-2">{item.date}</p>
+                  <p className="text-sm text-[#D9DFE5] mt-2">{item.date}</p>
                 </div>
               </Link>
             ))}
@@ -379,7 +379,7 @@ export default function HomePage() {
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
               {caeepHighlights.map((item) => (
-                <div key={item} className="border border-slate-800 bg-slate-950 px-5 py-4">
+                <div key={item} className="border border-[#36536B] bg-[#193653] px-5 py-4">
                   <p className="text-sm font-bold text-white leading-snug">{item}</p>
                 </div>
               ))}
@@ -395,21 +395,21 @@ export default function HomePage() {
           </div>
 
           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div className="relative min-h-[520px] border border-slate-800 overflow-hidden bg-slate-950 md:row-span-2">
+            <div className="relative min-h-[520px] border border-[#36536B] overflow-hidden bg-[#193653] md:row-span-2">
               <Image src="/spotlight/caeep-programme-retouched.png" alt="CAEEP courses and certifications" fill className="object-cover object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             </div>
-            <div className="relative min-h-[250px] border border-slate-800 overflow-hidden bg-slate-950">
+            <div className="relative min-h-[250px] border border-[#36536B] overflow-hidden bg-[#193653]">
               <Image src="/spotlight/caeep-virtual-open-day-retouched.png" alt="CAEEP virtual open day" fill className="object-cover object-top" />
             </div>
-            <div className="relative min-h-[250px] border border-slate-800 overflow-hidden bg-slate-950">
+            <div className="relative min-h-[250px] border border-[#36536B] overflow-hidden bg-[#193653]">
               <Image src="/spotlight/caeep-fees-overview.jpeg" alt="CAEEP fees and registration overview" fill className="object-cover object-top" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-slate-950 border-y border-slate-900 py-24">
+      <section className="bg-[#193653] border-y border-[#25445F] py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-12">
             <div className="lg:col-span-7">
@@ -421,8 +421,8 @@ export default function HomePage() {
               />
             </div>
             <div className="lg:col-span-5">
-              <div className="border border-slate-800 bg-black p-6">
-                <p className="text-slate-400 leading-relaxed">
+              <div className="border border-[#36536B] bg-[#10243A] p-6">
+                <p className="text-[#C7D0D8] leading-relaxed">
                   The May 2026 Workers' Day activities add a rare and valuable layer to the archive: Prof. Sulaiman as a culture-builder who connects institutional performance with staff wellbeing.
                 </p>
               </div>
@@ -431,14 +431,14 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {cultureMoments.map((item) => (
-              <div key={item.title} className="group border border-slate-800 bg-black overflow-hidden">
+              <div key={item.title} className="group border border-[#36536B] bg-[#10243A] overflow-hidden">
                 <div className="relative h-72 overflow-hidden">
                   <Image src={item.image} alt={item.title} fill className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-black text-white tracking-tight mb-3">{item.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm text-[#B7C1CB] leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -449,11 +449,11 @@ export default function HomePage() {
       <section className="py-24 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-blue-500 font-bold uppercase text-xs tracking-widest">Institutional Milestone</span>
+            <span className="text-[#C5A15A] font-bold uppercase text-xs tracking-widest">Institutional Milestone</span>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mt-4 mb-6">
               Bridging democracy through media, research, and executive education.
             </h2>
-            <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+            <p className="text-[#C7D0D8] text-lg mb-8 leading-relaxed">
               From Democracy Radio 104.9 FM to LeCeSA and CAEEP, the archive should show permanent structures, not isolated events.
               This section connects visitors to the achievements that best explain the DG's institutional legacy.
             </p>
@@ -464,18 +464,18 @@ export default function HomePage() {
               <MilestoneLink href="/library/women-in-governance" icon={<FaAward />} title="Women in Governance" />
             </div>
           </div>
-          <div className="relative min-h-[440px] border border-slate-800 overflow-hidden bg-slate-950">
+          <div className="relative min-h-[440px] border border-[#36536B] overflow-hidden bg-[#193653]">
             <Image src="/1library-radio.jpg" alt="Democracy Radio archive" fill className="object-cover opacity-70" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8">
-              <p className="text-[10px] text-blue-300 uppercase tracking-[0.25em] font-black mb-2">Featured Legacy</p>
+              <p className="text-[10px] text-[#E0C58E] uppercase tracking-[0.25em] font-black mb-2">Featured Legacy</p>
               <h3 className="text-3xl font-black text-white">Democracy Radio 104.9 FM</h3>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 px-6 max-w-7xl mx-auto border-t border-slate-900">
+      <section className="py-24 px-6 max-w-7xl mx-auto border-t border-[#25445F]">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
           <SectionHeader
             kicker="Current Archive"
@@ -490,8 +490,8 @@ export default function HomePage() {
                 onClick={() => setActiveFilter(filterOption)}
                 className={`px-5 py-2 text-xs font-bold tracking-widest uppercase transition-all border ${
                   activeFilter === filterOption
-                    ? "bg-blue-600 border-blue-500 text-white"
-                    : "bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-600 hover:text-slate-200"
+                    ? "bg-[#C5A15A] border-[#C5A15A] text-white"
+                    : "bg-[#193653] border-[#36536B] text-[#C7D0D8] hover:border-slate-600 hover:text-[#E7EBEF]"
                 }`}
               >
                 {filterOption}
@@ -500,19 +500,19 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-[#36536B]">
           {filteredBriefings.map((item) => (
-            <Link key={item.title} href={item.href} className="group block border border-slate-800 p-6 hover:bg-slate-950 transition-colors">
-              <div className="text-[10px] text-slate-500 tracking-[0.2em] mb-4 flex justify-between border-b border-slate-800 pb-2 uppercase">
+            <Link key={item.title} href={item.href} className="group block border border-[#36536B] p-6 hover:bg-[#193653] transition-colors">
+              <div className="text-[10px] text-[#B7C1CB] tracking-[0.2em] mb-4 flex justify-between border-b border-[#36536B] pb-2 uppercase">
                 <span>{item.location}</span>
-                <span className="text-blue-400">{item.category}</span>
+                <span className="text-[#C5A15A]">{item.category}</span>
               </div>
-              <div className="relative h-44 w-full mb-6 border border-slate-800 overflow-hidden">
+              <div className="relative h-44 w-full mb-6 border border-[#36536B] overflow-hidden">
                 <Image src={item.image} alt={item.title} fill className="object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400">{item.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
-              <div className="mt-6 text-slate-500 text-[10px] uppercase tracking-widest group-hover:text-blue-400 transition-colors">
+              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#C5A15A]">{item.title}</h3>
+              <p className="text-[#B7C1CB] text-sm leading-relaxed">{item.desc}</p>
+              <div className="mt-6 text-[#B7C1CB] text-[10px] uppercase tracking-widest group-hover:text-[#C5A15A] transition-colors">
                 Read briefing <span className="ml-2">-&gt;</span>
               </div>
             </Link>
@@ -536,21 +536,21 @@ function SectionHeader({
 }) {
   return (
     <div className={compact ? "max-w-2xl" : "max-w-3xl mb-12"}>
-      <p className="text-blue-500 font-black uppercase text-[10px] tracking-[0.3em] mb-3">{kicker}</p>
+      <p className="text-[#C5A15A] font-black uppercase text-[10px] tracking-[0.3em] mb-3">{kicker}</p>
       <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white mb-5">{title}</h2>
-      <p className="text-slate-500 leading-relaxed text-lg">{desc}</p>
+      <p className="text-[#B7C1CB] leading-relaxed text-lg">{desc}</p>
     </div>
   )
 }
 
 function MilestoneLink({ href, icon, title }: { href: string; icon: React.ReactNode; title: string }) {
   return (
-    <Link href={href} className="group flex items-center justify-between gap-4 border border-slate-800 bg-slate-950 px-5 py-4 hover:border-blue-500/50 transition-all">
-      <span className="flex items-center gap-3 text-sm font-bold text-slate-200">
-        <span className="text-blue-400">{icon}</span>
+    <Link href={href} className="group flex items-center justify-between gap-4 border border-[#36536B] bg-[#193653] px-5 py-4 hover:border-[#C5A15A]/60 transition-all">
+      <span className="flex items-center gap-3 text-sm font-bold text-[#E7EBEF]">
+        <span className="text-[#C5A15A]">{icon}</span>
         {title}
       </span>
-      <FaArrowRight className="text-slate-600 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+      <FaArrowRight className="text-slate-600 group-hover:text-[#C5A15A] group-hover:translate-x-1 transition-all" />
     </Link>
   )
 }
