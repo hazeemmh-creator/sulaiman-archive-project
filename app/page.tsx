@@ -267,7 +267,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="md:w-3/5 p-8 md:p-10 flex flex-col justify-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#C5A15A]/5 rounded-full blur-3xl"></div>
             <div className="flex items-center gap-2 text-[#C5A15A] text-[10px] font-black uppercase tracking-[0.2em] mb-4">
               <FaAward className="text-sm" /> Institutional Legacy
             </div>
@@ -291,7 +291,7 @@ export default function HomePage() {
             <Link key={item.label} href={item.href} className="group bg-[#193653] border border-[#36536B] p-5 md:p-6 hover:border-[#C5A15A]/60 hover:bg-[#25445F] transition-all">
               <div className="flex items-center justify-between mb-5">
                 <span className="text-[#C5A15A] text-xl">{item.icon}</span>
-                <FaArrowRight className="text-slate-700 group-hover:text-[#C5A15A] group-hover:translate-x-1 transition-all" />
+                <FaArrowRight className="text-[#A9B6C3] group-hover:text-[#C5A15A] group-hover:translate-x-1 transition-all" />
               </div>
               <div className="text-2xl md:text-4xl font-black tracking-tighter text-white">{item.value}</div>
               <div className="text-sm font-bold text-[#E7EBEF] mt-1">{item.label}</div>
@@ -313,7 +313,7 @@ export default function HomePage() {
             <Link key={path.title} href={path.href} className="group block bg-[#193653] border border-[#25445F] hover:border-[#C5A15A]/60 transition-all">
               <div className="relative h-56 overflow-hidden">
                 <Image src={path.image} alt={path.title} fill className="object-cover opacity-70 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#10243A] via-black/20 to-transparent" />
                 <div className="absolute left-5 bottom-5 w-12 h-12 bg-[#C5A15A] text-white flex items-center justify-center text-xl">
                   {path.icon}
                 </div>
@@ -491,7 +491,7 @@ export default function HomePage() {
                 className={`px-5 py-2 text-xs font-bold tracking-widest uppercase transition-all border ${
                   activeFilter === filterOption
                     ? "bg-[#C5A15A] border-[#C5A15A] text-white"
-                    : "bg-[#193653] border-[#36536B] text-[#C7D0D8] hover:border-slate-600 hover:text-[#E7EBEF]"
+                    : "bg-[#193653] border-[#36536B] text-[#C7D0D8] hover:border-[#C5A15A] hover:text-[#E7EBEF]"
                 }`}
               >
                 {filterOption}
@@ -550,7 +550,7 @@ function MilestoneLink({ href, icon, title }: { href: string; icon: React.ReactN
         <span className="text-[#C5A15A]">{icon}</span>
         {title}
       </span>
-      <FaArrowRight className="text-slate-600 group-hover:text-[#C5A15A] group-hover:translate-x-1 transition-all" />
+      <FaArrowRight className="text-[#A9B6C3] group-hover:text-[#C5A15A] group-hover:translate-x-1 transition-all" />
     </Link>
   )
 }
